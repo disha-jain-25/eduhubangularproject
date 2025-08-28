@@ -1,0 +1,184 @@
+/* =========================
+   Full Page Gradient Background
+========================= */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #475172, #774dab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   Glassy Card Effect
+========================= */
+.form-card {
+  background: rgba(119, 77, 171, 0.25); /* soft purple tint matching gradient */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 380px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-card:hover {
+  background: rgba(119, 77, 171, 0.35);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   Title with underline
+========================= */
+.form-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;  /* required for ::after positioning */
+  display: inline-block; 
+  padding-bottom: 8px; /* space between text and underline */
+}
+
+.form-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #6e8efb, #fff, #6e8efb);
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+/* Gradient animation for title underline */
+@keyframes shine {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+/* =========================
+   Input field
+========================= */
+.form-control {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.35);
+  outline: none;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.form-control::placeholder {
+  color: #ddd;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: #6e8efb;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(110,142,251,0.5);
+}
+
+/* =========================
+   Button
+========================= */
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #6e8efb;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #5772c7;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Price result
+========================= */
+.price-result {
+  margin-top: 18px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffd369;
+}
+
+/* =========================
+   Success and Error Messages
+========================= */
+.pop-message {
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-weight: 500;
+  font-size: 1.0rem;
+  text-align: center;
+  margin-top: 20px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  animation: fadeIn 0.5s ease-in-out;
+  z-index: 10;
+  position: relative;
+}
+
+.pop-message.success {
+  background: rgba(46, 125, 50, 0.85);
+  color: #fff;
+  border: 1px solid #2e7d32;
+}
+
+.pop-message.error {
+  background: rgba(244, 67, 54, 0.85);
+  color: #fff;
+  border: 1px solid #d32f2f;
+}
+
+/* =========================
+   Optional fixed position messages
+========================= */
+.message-fixed {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  z-index: 999;
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

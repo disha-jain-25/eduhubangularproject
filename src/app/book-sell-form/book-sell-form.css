@@ -1,0 +1,243 @@
+/* =========================
+   Full Page Gradient Background
+========================= */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #475172, #774dab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   Glassy Card Effect
+========================= */
+.form-card {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.08); /* softer glass */
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 40px 30px;
+  border-radius: 22px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s;
+}
+
+.form-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   Title
+========================= */
+/* Center the form title above the card */
+.form-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;  /* required for ::after positioning */
+  display: inline-block; 
+  padding-bottom: 8px; /* space between text and underline */
+}
+
+.form-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #6e8efb, #fff, #6e8efb);
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+/* Animation for gradient movement */
+@keyframes shine {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+/* =========================
+   Form Inputs
+========================= */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #ccc;
+  font-size: 15px;
+  text-align: left;
+}
+
+.form-control {
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  font-size: 16px;
+  background: rgba(255,255,255,0.05); /* softer glass */
+  color:white;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.form-control:focus {
+  border-color: #6e8efb;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 0 12px rgba(110,142,251,0.5);
+}
+
+/* =========================
+   Buttons
+========================= */
+.btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #6e8efb, #2575fc);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46,125,250,0.4);
+}
+
+.btn:disabled {
+  background: rgba(110,142,251,0.4);
+  cursor: not-allowed;
+}
+
+/* =========================
+   Success & Error Messages
+========================= */
+.success-message {
+  margin-top: 15px;
+  padding: 14px 20px;
+  background: rgba(46,125,50,0.8);
+  color: #fff;
+  border: 1px solid rgba(46,125,50,0.9);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  animation: fadeInOut 3s ease;
+}
+
+.error {
+  color: #ff5252;
+  font-size: 15px;
+  margin-top: 6px;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* =========================
+   Book Card
+========================= */
+.book-card {
+  margin-top: 20px;
+  padding: 18px;
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+  color: #fff;
+  width: 100%;
+  max-width: 300px;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+  border: 1px solid rgba(110,142,251,0.4);
+}
+
+.book-card h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #6e8efb; /* soft accent */
+  text-shadow: 0 1px 6px rgba(110,142,251,0.3);
+}
+
+.book-card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Buy Button */
+.buy-btn {
+  margin-top: 12px;
+  padding: 12px;
+  background: linear-gradient(135deg, #2575fc, #6e8efb);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  width: 100%;
+  font-size: 15px;
+}
+
+.buy-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #1e5ef5, #5e7dfb);
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}

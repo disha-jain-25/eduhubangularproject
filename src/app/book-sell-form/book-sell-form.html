@@ -1,0 +1,49 @@
+<div class="form-container">
+  <!-- Title on top, outside the card -->
+  <h2 class="form-title">Sell Your Book</h2>
+
+  <div class="form-card">
+    <form #sellForm="ngForm" (ngSubmit)="onSell(sellForm)">
+      <!-- Book Name -->
+      <div class="form-group">
+        <label>Book Name</label>
+        <input type="text" name="bookName" [(ngModel)]="book.bookName" required class="form-control" #bookName="ngModel" />
+        <div class="error" *ngIf="bookName.invalid && bookName.touched">Book name is required</div>
+      </div>
+
+      <!-- Year -->
+      <div class="form-group">
+        <label>Year</label>
+        <input type="number" name="year" [(ngModel)]="book.year" required pattern="^[0-9]{4}$" class="form-control" #year="ngModel" />
+        <div class="error" *ngIf="year.errors?.['required'] && year.touched">Year is required</div>
+        <div class="error" *ngIf="year.errors?.['pattern'] && year.touched">Enter a valid 4-digit year</div>
+      </div>
+
+      <!-- Price -->
+      <div class="form-group">
+        <label>Price</label>
+        <input type="number" name="price" [(ngModel)]="book.price" required min="50" max="5000" class="form-control" #price="ngModel" />
+        <div class="error" *ngIf="price.errors?.['required'] && price.touched">Price is required</div>
+        <div class="error" *ngIf="price.errors?.['min'] && price.touched">Minimum price is 50</div>
+        <div class="error" *ngIf="price.errors?.['max'] && price.touched">Maximum price is 5000</div>
+      </div>
+
+      <!-- Book Type Dropdown -->
+      <div class="form-group">
+        <label>Book Type</label>
+        <select name="type" [(ngModel)]="book.type" required class="form-control">
+          <option value="" disabled selected>Select Type</option>
+          <option value="Fresh">Fresh</option>
+          <option value="Second-hand">Second-hand</option>
+        </select>
+        <div class="error" *ngIf="!book.type && sellForm.submitted">Please select book type</div>
+      </div>
+
+      <button type="submit" class="btn" [disabled]="sellForm.invalid">Sell Book</button>
+    </form>
+
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+  </div>
+</div>

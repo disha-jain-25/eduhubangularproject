@@ -1,0 +1,31 @@
+<div class="transactions-container">
+  <div class="transactions-card">
+    <h2>💰 Transaction History</h2>
+
+    <!-- If no transactions -->
+    <div *ngIf="transactions.length === 0" class="no-data">
+      No transactions yet.
+    </div>
+
+    <!-- Show transactions -->
+    <ul *ngIf="transactions.length > 0">
+      <li *ngFor="let t of transactions" 
+          [ngClass]="{
+            'book-sell': t.type === 'Book Sell',
+            'buy-book': t.type === 'Buy Book',
+            'xerox': t.type === 'Xerox'
+          }">
+
+        <div class="details">
+          <span class="type">{{ t.type }}</span>
+          <span class="item" *ngIf="t.item"> - {{ t.item }}</span>
+        </div>
+
+        <div class="meta">
+          <span class="amount">{{ t.amount | currency:'INR' }}</span>
+          <span class="date">{{ t.date | date:'short' }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

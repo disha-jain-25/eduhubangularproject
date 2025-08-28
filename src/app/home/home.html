@@ -1,0 +1,68 @@
+<div class="home-container">
+  <!-- Navbar -->
+ <header class="navbar">
+  <div class="logo">
+    <h2>📚 BookHub</h2>
+  </div>
+
+  <!-- Navigation links like Amazon style -->
+  <nav class="nav-links">
+    <a routerLink="/home" routerLinkActive="active-link">Home</a>
+    <a routerLink="/about" routerLinkActive="active-link">About</a>
+    <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
+  </nav>
+
+ <div class="profile-menu">
+  <img src="https://img.freepik.com/premium-photo/male-female-profile-avatar-user-avatars-gender-icons_1020867-75099.jpg?w=2000" 
+       alt="Profile" class="profile-icon" (click)="toggleDropdown()" />
+
+  <div class="dropdown" *ngIf="showDropdown">
+    <p>{{ student?.name }}</p>
+    <!-- Stop click from bubbling to parent -->
+    <a routerLink="/profile" (click)="showDropdown = false">Profile</a>
+    <a routerLink="/transactions" (click)="showDropdown = false">Transactions</a>
+    <a (click)="logout(); showDropdown = false">Logout</a>
+  </div>
+</div>
+
+</header>
+
+
+  <!-- Main content -->
+  <main class="content">
+    <h3>Welcome, {{ student?.name }} 🎉</h3>
+
+    <!-- Quick Action Cards -->
+    <div class="cards">
+      <a routerLink="/sell" class="card">Sell Books</a>
+      <a routerLink="/buy" class="card">Buy Books</a>
+      <a routerLink="/xerox" class="card">Xerox Request</a>
+    </div>
+
+    <!-- Featured Books Section -->
+    <section class="featured-books">
+      <h3>📖 Featured Books</h3>
+      <div class="books-container">
+        <div class="book-card" *ngFor="let book of featuredBooks">
+          <img [src]="book.image" alt="{{ book.title }}" />
+          <h4>{{ book.title }}</h4>
+          <p>by {{ book.author }}</p>
+          <p>₹{{ book.price }}</p>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 BookHub. All Rights Reserved.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+</div>

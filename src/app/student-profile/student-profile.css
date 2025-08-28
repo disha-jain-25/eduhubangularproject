@@ -1,0 +1,159 @@
+/* Full page gradient background with animation */
+.profile-container {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #475172, #774dab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Card with soft glassy effect */
+.profile-card {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.profile-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Title with gradient underline */
+.profile-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  display: inline-block; 
+  padding-bottom: 8px;
+}
+
+.profile-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #6e8efb, #fff, #6e8efb);
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #fff;
+  font-size: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #6e8efb;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px; /* same as form inputs */
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  text-align: center;
+}
+
+/* Subscription button - modern elegant style */
+/* Subscription button - modern elegant style */
+.btn.subscribe {
+  background: #6e8efb; /* soft gradient blue matching your underline */
+  color: #fff; /* white text */
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  margin-bottom: 15px; /* space below subscribe button */
+}
+
+.btn.subscribe:hover {
+  background: #5772c7; /* slightly darker blue on hover */
+  transform: translateY(-2px);
+}
+
+
+/* Unsubscribe button - red style */
+.btn.unsubscribe {
+  background: #ff5252;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.btn.unsubscribe:hover {
+  background: #e53935;
+  transform: translateY(-2px);
+}
+
+
+/* Logout button */
+.btn.logout {
+  background: #4caf50;
+  color: #fff;
+  
+}
+
+.btn.logout:hover {
+  background: #388e3c;
+  transform: translateY(-2px);
+}
+
+/* Background animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

@@ -1,0 +1,162 @@
+/* =========================
+   Full Page Gradient Background
+========================= */
+.transactions-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2c3e50, #774dab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  padding: 20px;
+}
+
+/* =========================
+   Card with Enhanced Glassy Effect
+========================= */
+.transactions-card {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.15); /* stronger glass effect */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* =========================
+   Title
+========================= */
+h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   Empty Message
+========================= */
+.no-data {
+  text-align: center;
+  font-style: italic;
+  color: #ddd;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+/* =========================
+   Transactions list
+========================= */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.12); /* glassy effect */
+  border-left: 6px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.2);
+}
+
+/* =========================
+   Transaction types with colors
+========================= */
+li.credit {
+  border-left-color: #4caf50;
+  background: rgba(76,175,80,0.2);
+  color: #2e7d32;
+}
+
+li.debit {
+  border-left-color: #2575fc;
+  background: rgba(37,117,252,0.2);
+  color: #1565c0;
+}
+
+li.book-sell {
+  border-left-color: #4caf50;  
+  background: rgba(76,175,80,0.2);
+  color: #032d0583;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+li.buy-book {
+  border-left-color: #ff9800;   
+  background: rgba(255,152,0,0.2);
+  color: #a14b05b5;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+li.xerox {
+  border-left-color: #2575fc;   
+  background: rgba(37,117,252,0.2);
+  color: blue;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+/* =========================
+   Transaction details
+========================= */
+.details {
+  flex: 1;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.meta {
+  text-align: right;
+  font-size: 16px;
+  color: #eee;
+}
+
+.amount {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.date {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

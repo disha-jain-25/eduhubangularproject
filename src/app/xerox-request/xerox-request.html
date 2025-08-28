@@ -1,0 +1,38 @@
+<div class="form-container">
+    <h2 class="form-title">Xerox Request</h2>
+  <div class="form-card">
+    
+    <form #xeroxForm="ngForm" (ngSubmit)="requestXerox(xeroxForm.value)">
+      <input 
+        name="pages" 
+        ngModel 
+        required 
+        type="number" 
+        placeholder="No. of Pages"
+        class="form-control"
+        #pages="ngModel"
+      >
+
+      <!-- Inline Error (field-level) -->
+      <div *ngIf="pages.value < 0 && pages.touched" class="error-popup">
+        ❌ Pages cannot be negative
+      </div>
+
+      <button type="submit" class="btn">Request Xerox</button>
+    </form>
+
+    <!-- Show total price -->
+    <p *ngIf="price" class="price-result">
+      Total Price: <strong>{{ price | currency:'INR' }}</strong>
+    </p>
+
+    <!-- Show pop messages here -->
+    <div *ngIf="errorMessage" class="pop-message error">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="successMessage" class="pop-message success">
+      {{ successMessage }}
+    </div>
+  </div>
+</div>

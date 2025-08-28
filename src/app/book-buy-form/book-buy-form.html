@@ -1,0 +1,41 @@
+<div class="form-container">
+    <h2 class="form-title">Buy a Book</h2>
+  <div class="form-card">
+    
+    <div class="form-group">
+      <input 
+        type="text" 
+        placeholder="Enter book name" 
+        [(ngModel)]="bookName" 
+        class="form-control"
+      />
+      <button class="btn" (click)="searchBook()">Search</button>
+    </div>
+
+    <div *ngIf="message" class="error-card">
+      {{ message }}
+    </div>
+
+    <div class="book-card" *ngIf="foundBook">
+      <h3>{{ foundBook.bookName }}</h3>
+      <p><strong>Year:</strong> {{ foundBook.year }}</p>
+      <p><strong>Type:</strong> {{ foundBook.type || 'Second-hand' }}</p>
+      <p><strong>Price:</strong> {{ foundBook.price | currency:'INR' }}</p>
+      <button 
+        class="btn buy-btn" 
+        (click)="buyBook(buyForm)" 
+        [disabled]="!foundBook"
+      >
+        Buy Now
+      </button>
+    </div>
+
+    <!-- Success Message -->
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+
+
+    <form #buyForm="ngForm"></form>
+  </div>
+</div>

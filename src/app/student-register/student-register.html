@@ -1,0 +1,49 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>Student Register</h2>
+
+   <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="student.name" required />
+        <div class="error" *ngIf="!student.name && registerForm.submitted">
+          Full Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="student.email" required />
+        <div class="error" *ngIf="!student.email && registerForm.submitted">
+          Email is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="student.password"
+          required
+          minlength="6"
+        />
+        <div class="error" *ngIf="student.password.length < 6 && registerForm.submitted">
+          Password must be at least 6 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="course">Course</label>
+        <input type="text" id="course" name="course" [(ngModel)]="student.course" />
+      </div>
+
+      <button type="submit">Register</button>
+
+      <p class="switch">
+        Already have an account? <a routerLink="/login">Login</a>
+      </p>
+    </form>
+  </div>
+</div>

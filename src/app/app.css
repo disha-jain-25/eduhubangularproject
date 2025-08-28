@@ -1,0 +1,47 @@
+/* Global background for the whole app with dark overlay */
+body, :host {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #475172, #774dab);
+  position: relative;
+  color: #fff; /* default text color for visibility */
+  overflow: hidden;
+}
+
+/* Dark overlay for the entire app */
+body::before, :host::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.5); /* black shade with transparency */
+  z-index: 0;
+}
+
+/* Global heading (no box, minimal gap) */
+header {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 10px 0;
+  background: none; /* no extra box */
+}
+
+/* Ensure content appears above overlay */
+router-outlet, .app-content {
+  position: relative;
+  z-index: 1;
+  flex: 1; /* take remaining space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Center login card with dark overlay background */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #475172, #774dab);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark shade overlay */
+.auth-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.5); /* black shade with transparency */
+  z-index: 0;
+}
+
+/* Glass effect login card */
+.auth-card {
+  position: relative;       /* place above overlay */
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+  backdrop-filter: blur(15px);          /* glass blur effect */
+  -webkit-backdrop-filter: blur(15px);  /* for Safari */
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+  padding: 30px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3); /* soft shadow */
+}
+
+/* Heading */
+h2 {
+  margin-bottom: 15px;
+  color: #6e8efb;
+  z-index: 1;
+}
+
+/* Form group */
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: 600;
+  color: #fff; /* white for glass effect */
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.4); /* white semi-transparent */
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #6e8efb;
+  outline: none;
+  background: rgba(255,255,255,0.3);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #6e8efb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #5a7bfa;
+}
+
+/* Error message */
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+/* Switch link */
+.switch {
+  margin-top: 15px;
+}
+
+.switch a {
+  color: #6e8efb;
+  font-weight: 600;
+  text-decoration: none;
+}
