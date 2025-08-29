@@ -8,7 +8,7 @@
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(135deg, #475172, #774dab);
+   background: linear-gradient(135deg, #475172, #774dab);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   padding: 20px;
